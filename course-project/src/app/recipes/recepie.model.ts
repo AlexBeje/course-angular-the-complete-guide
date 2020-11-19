@@ -1,4 +1,4 @@
-export class RecepiesModel {
+export class RecepieModel {
   public name: string;
   public description: string;
   public imagePath: string;
