@@ -1,0 +1,17 @@
+.list-group-item {
+  background: rgb(240, 240, 240);
+  color: rgb(30, 30, 30);
+  cursor: pointer;
+  text-decoration: none;
+  //  transition-property: box-shadow, transform;
+  //  transition-duration: 0.5s;
+  //  transition: box-shadow 0.5s, transform 0.5s;
+  transition: all 0.5s;
+  &:hover {
+    box-shadow: darkgray 0 10px 20px;
+    transform: scale(1.02);
+  }
+  &:not(:last-child) {
+    margin-bottom: 1.5em;
+  }
+}
