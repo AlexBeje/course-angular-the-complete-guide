@@ -10,6 +10,9 @@
     class="recipe-list__recipe-item"
     *ngFor="let recipieEl of recipies"
   >
-    <app-recipe-item [recipie]="recipieEl"></app-recipe-item>
+    <app-recipe-item
+      [recipie]="recipieEl"
+      (selectedRecipe)="onRecipeSelect(recipieEl)"
+    ></app-recipe-item>
   </div>
 </div>
