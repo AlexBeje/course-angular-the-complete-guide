@@ -1,0 +1,11 @@
+.list-group-item {
+  border: 1px solid lightgrey;
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.5s;
+  &:hover {
+    box-shadow: darkgray 0 10px 20px;
+    transform: scale(1.02);
+  }
+}

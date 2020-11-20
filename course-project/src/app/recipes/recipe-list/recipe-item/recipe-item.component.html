@@ -1,1 +1,9 @@
-<p>recipe-item works!</p>
+<a class="list-group-item d-flex">
+  <div class="w-50 mr-3">
+    <h4 class="list-group-item-heading">{{ recipie.name }}</h4>
+    <p class="list-group-item-text m-0">{{ recipie.description }}</p>
+  </div>
+  <div class="w-50">
+    <img [src]="recipie.imagePath" alt="{{ recipie.name }}" class="img-fluid" />
+  </div>
+</a>
