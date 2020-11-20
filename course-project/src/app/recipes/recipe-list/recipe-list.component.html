@@ -5,20 +5,11 @@
 </div>
 <hr />
 <div class="row">
-  <div class="col-12">
-    <a class="list-group-item d-flex" *ngFor="let recipie of recipies">
-      <div class="w-50 mr-3">
-        <h4 class="list-group-item-heading">{{ recipie.name }}</h4>
-        <p class="list-group-item-text m-0">{{ recipie.description }}</p>
-      </div>
-      <div class="w-50">
-        <img
-          [src]="recipie.imagePath"
-          alt="{{ recipie.name }}"
-          class="img-fluid"
-        />
-      </div>
-    </a>
-    <!-- <app-recipe-item></app-recipe-item> -->
+  <div
+    class="col-12 d-flex flex-column"
+    class="recipe-list__recipe-item"
+    *ngFor="let recipieEl of recipies"
+  >
+    <app-recipe-item [recipie]="recipieEl"></app-recipe-item>
   </div>
 </div>
