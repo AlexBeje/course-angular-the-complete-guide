@@ -1,18 +1,11 @@
 <div class="row">
   <div class="col-12">
-    <div class="btn btn-success">New Recipie</div>
+    <div class="btn btn-success">New Recipe</div>
   </div>
 </div>
 <hr />
 <div class="row">
-  <div
-    class="col-12 d-flex flex-column"
-    class="recipe-list__recipe-item"
-    *ngFor="let recipieEl of recipies"
-  >
-    <app-recipe-item
-      [recipie]="recipieEl"
-      (selectedRecipe)="onRecipeSelect(recipieEl)"
-    ></app-recipe-item>
+  <div class="col-12 d-flex flex-column" class="recipe-list__recipe-item" *ngFor="let recipeEl of recipes">
+    <app-recipe-item [recipe]="recipeEl" (selectedRecipe)="onRecipeSelect(recipeEl)"></app-recipe-item>
   </div>
 </div>
