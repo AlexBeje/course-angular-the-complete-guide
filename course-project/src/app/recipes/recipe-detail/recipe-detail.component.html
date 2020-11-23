@@ -1,29 +1,36 @@
-<div class="row">
-  <div class="col-12">
-    <img [src]="selectedRecipe.imagePath" alt="" class="img-fluid mb-4" />
-  </div>
-</div>
-<div class="row mb-2">
-  <div class="col-12">
-    <h1>{{ selectedRecipe.name }}</h1>
-  </div>
-</div>
-<div class="row">
-  <div class="col-12">
-    <div class="btn-group">
-      <button class="btn btn-primary dropdown-toggle" appDropdown>Manage recipe</button>
-      <ul class="dropdown-menu">
-        <li class="dropdown-item"><a href="#">To Shopping Cart</a></li>
-        <li class="dropdown-item"><a href="#">Edit Recipe</a></li>
-        <li class="dropdown-item"><a href="#">Delete Recipe</a></li>
-      </ul>
+<div *ngIf="selectedRecipe; else infoText">
+  <div class="row">
+    <div class="col-12">
+      <img [src]="selectedRecipe.imagePath" alt="" class="img-fluid mb-4" />
     </div>
   </div>
+  <div class="row mb-2">
+    <div class="col-12">
+      <h1>{{ selectedRecipe.name }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="btn-group">
+        <button class="btn btn-primary dropdown-toggle" appDropdown>Manage recipe</button>
+        <ul class="dropdown-menu">
+          <li class="dropdown-item"><a href="#">To Shopping Cart</a></li>
+          <li class="dropdown-item"><a href="#">Edit Recipe</a></li>
+          <li class="dropdown-item"><a href="#">Delete Recipe</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-12">{{ selectedRecipe.description }}</div>
+  </div>
+  <div class="row">
+    <div class="col-12">Ingredients</div>
+  </div>
 </div>
-<hr />
-<div class="row">
-  <div class="col-12">{{ selectedRecipe.description }}</div>
-</div>
-<div class="row">
-  <div class="col-12">Ingredients</div>
-</div>
+<ng-template #infoText>
+  <div class="d-flex h-100">
+    <h1 class="m-auto">Please select a 🍲.</h1>
+  </div>
+</ng-template>

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 import { RecipeModel } from '../../recepie.model';
 
@@ -6,6 +6,8 @@ import { RecipeModel } from '../../recepie.model';
   providedIn: 'root',
 })
 export class RecipeService {
+  selectedRecipe = new EventEmitter<RecipeModel>();
+
   private recipes: RecipeModel[] = [
     new RecipeModel(
       'Test recipe 1',
@@ -18,6 +20,7 @@ export class RecipeService {
       'https://p1.pxfuel.com/preview/548/595/580/gastronomy-food-dishes-eat.jpg'
     ),
   ];
+
   getRecipes() {
     return this.recipes.slice();
   }
