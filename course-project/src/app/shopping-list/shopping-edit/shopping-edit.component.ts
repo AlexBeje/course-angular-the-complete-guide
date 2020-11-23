@@ -1,8 +1,8 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { RecipeService } from 'src/app/recipes/services/recipe/recipe.service';
+import { RecipeService } from 'src/app/recipes/services/recipe.service';
 
-import { IngredientModel } from 'src/app/shared/ingredient.model';
-import { ShoppingListService } from '../services/shopping-list/shopping-list.service';
+import { IngredientModel } from 'src/app/shared/models/ingredient.model';
+import { ShoppingListService } from '../services/shopping-list.service';
 
 @Component({
   selector: 'app-shopping-edit',

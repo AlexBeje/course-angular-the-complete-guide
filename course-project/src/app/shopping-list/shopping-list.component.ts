@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { RecipeService } from '../recipes/services/recipe/recipe.service';
-import { IngredientModel } from '../shared/ingredient.model';
-import { ShoppingListService } from './services/shopping-list/shopping-list.service';
+import { RecipeService } from '../recipes/services/recipe.service';
+import { IngredientModel } from '../shared/models/ingredient.model';
+import { ShoppingListService } from './services/shopping-list.service';
 
 @Component({
   selector: 'app-shopping-list',
