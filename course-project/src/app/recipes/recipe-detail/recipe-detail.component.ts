@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ShoppingListService } from 'src/app/shopping-list/services/shopping-list.service';
 import { RecipeModel } from '../models/recepie.model';
 import { RecipeService } from '../services/recipe.service';
 
@@ -10,11 +11,20 @@ import { RecipeService } from '../services/recipe.service';
 export class RecipeDetailComponent {
   @Input() selectedRecipe: RecipeModel;
 
-  constructor(private recipeService: RecipeService) {}
+  constructor(
+    private recipeService: RecipeService,
+    private shoppingListService: ShoppingListService
+  ) {}
 
   ngOnInit() {
     this.recipeService.selectedRecipe.subscribe(
       (recipe) => (this.selectedRecipe = recipe)
     );
+  }
+
+  sendToShoppingCard() {
+    this.selectedRecipe.ingredients.forEach((ingredient) => {
+      this.shoppingListService.addNewIngedient(ingredient);
+    });
   }
 }
