@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { ShoppingListService } from 'src/app/shopping-list/services/shopping-list.service';
 import { RecipeModel } from '../models/recepie.model';
 import { RecipeService } from '../services/recipe.service';
@@ -9,17 +10,23 @@ import { RecipeService } from '../services/recipe.service';
   styleUrls: ['./recipe-detail.component.scss'],
 })
 export class RecipeDetailComponent {
-  @Input() selectedRecipe: RecipeModel;
+  selectedRecipe: RecipeModel;
+  id: number;
 
   constructor(
     private recipeService: RecipeService,
-    private shoppingListService: ShoppingListService
+    private shoppingListService: ShoppingListService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
     this.recipeService.selectedRecipe.subscribe(
       (recipe) => (this.selectedRecipe = recipe)
     );
+    this.route.params.subscribe((params: Params) => {
+      this.id = +params['id'];
+      this.selectedRecipe = this.recipeService.getRecipe(this.id);
+    });
   }
 
   sendToShoppingCard() {
