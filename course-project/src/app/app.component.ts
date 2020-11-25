@@ -5,11 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title = 'course-project';
-  loadedFeature = 'recipes';
-
-  onNavigate(feature: string) {
-    this.loadedFeature = feature;
-  }
-}
+export class AppComponent {}
