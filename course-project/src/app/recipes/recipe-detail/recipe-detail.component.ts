@@ -29,7 +29,7 @@ export class RecipeDetailComponent {
 
   sendToShoppingCard() {
     this.selectedRecipe.ingredients.forEach((ingredient) => {
-      this.shoppingListService.addNewIngedient(ingredient);
+      this.shoppingListService.addIngedient(ingredient);
     });
   }
 

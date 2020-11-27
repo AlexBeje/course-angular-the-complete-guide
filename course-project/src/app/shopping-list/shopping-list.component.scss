@@ -3,6 +3,7 @@
   text-decoration: none;
   transition: all 0.5s;
   &:hover {
+    cursor: pointer;
     background-color: whitesmoke;
   }
 }
